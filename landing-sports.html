@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOAT Milk | For sports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #faf7f2;
+            --cream-dark: #f0ebe3;
+            --terracotta: #c67b5c;
+            --terracotta-dark: #a85d3f;
+            --espresso: #2c2420;
+            --olive: #6b7c59;
+            --gold: #c9a962;
+            --sage: #9caa8b;
+            --charcoal: #3d3835;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Crimson Pro', Georgia, serif; background: var(--cream); color: var(--espresso); font-size: 18px; line-height: 1.7; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 50px; }
+        nav { padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--cream-dark); background: var(--cream); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 500; color: var(--espresso); text-decoration: none; }
+        .logo span { font-style: italic; color: var(--terracotta); }
+        .nav-links { display: flex; gap: 50px; list-style: none; }
+        .nav-links a { color: var(--charcoal); text-decoration: none; font-size: 0.95rem; }
+        .nav-cta { background: var(--terracotta); color: var(--cream); padding: 14px 32px; text-decoration: none; font-size: 0.9rem; }
+        .hero { min-height: 80vh; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 80px 50px; }
+        .hero-content { display: flex; flex-direction: column; justify-content: center; }
+        .hero-tag { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 25px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 400; line-height: 1.15; margin-bottom: 30px; }
+        .hero h1 em { font-style: italic; color: var(--terracotta); }
+        .hero-description { font-size: 1.15rem; color: var(--charcoal); max-width: 480px; margin-bottom: 50px; }
+        .hero-ctas { display: flex; gap: 25px; }
+        .btn-primary { background: var(--espresso); color: var(--cream); padding: 18px 40px; text-decoration: none; font-size: 0.9rem; }
+        .btn-text { color: var(--terracotta); text-decoration: none; font-size: 0.95rem; }
+        .hero-image { background: var(--cream-dark); display: flex; align-items: center; justify-content: center; min-height: 400px; }
+        .intro { padding: 100px 50px; text-align: center; }
+        .intro h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 30px; }
+        .intro p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: var(--charcoal); }
+        .benefits { padding: 100px 50px; background: var(--cream-dark); }
+        .benefits-header { text-align: center; margin-bottom: 60px; }
+        .benefits-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .benefit-item { background: var(--cream); padding: 40px; }
+        .benefit-item h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 15px; }
+        .benefit-item p { color: var(--charcoal); font-size: 0.95rem; }
+        .products { padding: 100px 50px; }
+        .products-header { text-align: center; margin-bottom: 60px; }
+        .products-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; }
+        .products-header p { color: var(--charcoal); }
+        .product-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .product-image { background: var(--cream-dark); min-height: 400px; display: flex; align-items: center; justify-content: center; }
+        .product-info h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; }
+        .product-info h3 em { color: var(--terracotta); }
+        .product-description { margin-bottom: 30px; color: var(--charcoal); }
+        .product-features { list-style: none; margin-bottom: 30px; }
+        .product-features li { padding: 8px 0; border-bottom: 1px solid var(--cream-dark); }
+        .product-features li::before { content: "✓ "; color: var(--terracotta); }
+        .testimonial { padding: 100px 50px; background: var(--espresso); color: var(--cream); text-align: center; }
+        .testimonial-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; max-width: 900px; margin: 0 auto 40px; line-height: 1.5; }
+        .testimonial-author h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .testimonial-author span { font-size: 0.9rem; opacity: 0.8; }
+        .cta-section { padding: 100px 50px; text-align: center; background: var(--terracotta); color: var(--cream); }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+        .cta-section p { margin-bottom: 40px; opacity: 0.9; }
+        .btn-light { background: var(--cream); color: var(--espresso); padding: 18px 40px; text-decoration: none; font-size: 0.9rem; }
+        footer { padding: 60px 50px; background: var(--espresso); color: var(--cream); }
+        .footer-brand .logo { color: var(--cream); }
+        .footer-brand p { margin-top: 15px; opacity: 0.7; max-width: 300px; }
+        .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.6; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">GOAT <span>sports</span></a>
+        <ul class="nav-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <a href="#" class="nav-cta">Shop Now</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">For sports</div>
+            <h1>Discover the Power of <em>Goat Milk</em></h1>
+            <p class="hero-description">Premium goat milk crafted specifically for sports. Natural, nutritious, and delicious.</p>
+            <div class="hero-ctas">
+                <a href="#" class="btn-primary">Shop Now</a>
+                <a href="#" class="btn-text">Learn More →</a>
+            </div>
+        </div>
+        <div class="hero-image">[Hero Image Placeholder]</div>
+    </section>
+
+    <section class="intro">
+        <h2>Perfect for sports</h2>
+        <p>Discover why sports everywhere are choosing goat milk for better nutrition and easier digestion.</p>
+    </section>
+
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="benefits-header">
+                <h2>Why sports Choose Goat Milk</h2>
+            </div>
+            <div class="benefits-grid">
+                
+                <div class="benefit-item">
+                    <h3>Easy Digestion</h3>
+                    <p>Naturally easier on the stomach than cow's milk.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Complete Nutrition</h3>
+                    <p>Packed with protein, calcium, and essential vitamins.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Great Taste</h3>
+                    <p>Creamy and delicious—you'll love every sip.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Natural Purity</h3>
+                    <p>From grass-fed goats with no hormones or antibiotics.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Versatile</h3>
+                    <p>Perfect for drinking, cooking, and baking.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Sustainable</h3>
+                    <p>Better for you and better for the planet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="products-header">
+                <h2>Our Products</h2>
+                <p>Quality goat milk products designed for sports.</p>
+            </div>
+            <div class="product-showcase">
+                <div class="product-image">[Product Image Placeholder]</div>
+                <div class="product-info">
+                    <h3>GOAT <em>Premium Milk</em></h3>
+                    <p class="product-description">Our signature whole milk, fresh from pasture-raised goats.</p>
+                    <ul class="product-features">
+                        <li>100% grass-fed</li><li>No hormones or antibiotics</li><li>Farm fresh taste</li><li>Available in multiple sizes</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <p class="testimonial-text">"Switching to goat milk was the best decision I ever made. It tastes amazing and I feel so much better!"</p>
+            <div class="testimonial-author">
+                <h4>Happy Customer</h4>
+                <span>sports</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Try GOAT Milk?</h2>
+            <p>Order today and experience the difference.</p>
+            <a href="#" class="btn-light">Order Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-brand">
+                <a href="#" class="logo">GOAT <span>sports</span></a>
+                <p>Premium goat milk for sports.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GOAT <span>sports</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
