@@ -1,0 +1,35 @@
+{
+  "name": "grady-challenge",
+  "version": "1.0.0",
+  "description": "GitHub Pages content manager CLI",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "content-manager": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/cli.ts",
+    "dev": "tsx watch src/cli.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeasling-gradial/grady-challenge.git"
+  },
+  "keywords": ["github", "pages", "content", "cli"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeasling-gradial/grady-challenge/issues"
+  },
+  "homepage": "https://github.com/leeasling-gradial/grady-challenge#readme",
+  "dependencies": {
+    "@octokit/rest": "^22.0.1",
+    "commander": "^14.0.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  }
+}
